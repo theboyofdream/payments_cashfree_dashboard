@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 import { Sidebar, SidebarContent, SidebarGroup } from "@/components/ui/sidebar";
-import { ScrollArea } from "./ui/scroll-area";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 // Menu items.
 const items = [
@@ -84,7 +84,7 @@ export function AppSidebar() {
   return (
     <Sidebar className="dark !text-white">
       <SidebarContent>
-        <SidebarGroup className="flex flex-col gap-2 max-h-screen">
+        <SidebarGroup className="flex flex-col gap-2 h-full">
           <div className="flex gap-4 justify-between items-center px-2 pt-4 mb-4">
             <img
               src="/images/brand-icon.png"
@@ -94,16 +94,17 @@ export function AppSidebar() {
               // height={120}
             />
             <div className="flex-1 flex flex-col justify-between">
-              <h3>Nishyan</h3>
+              <h3 className="text-white">Nishyan</h3>
               <a
                 href="#"
-                className="text-xl underline underline-offset-4 opacity-90"
+                className="text-white text-xl underline underline-offset-4 opacity-90"
               >
                 Visit store
               </a>
             </div>
             <ChevronDown color="white" className="w-8 h-8" />
           </div>
+          {/* <div className="!flex-1 mr-3"> */}
           <ScrollArea className="flex-1 mr-3">
             {items.map((item) => (
               // <SidebarMenuItem key={item.title}>
@@ -111,7 +112,7 @@ export function AppSidebar() {
               <a
                 href={item.url}
                 key={item.title}
-                className="flex gap-2 p-2 m-1 hover:bg-gray-700 rounded-md items-center"
+                className="text-white flex gap-2 p-2 m-1 hover:bg-gray-700 rounded-md items-center"
               >
                 {getAppSidebarIcon(item.title) ? (
                   getAppSidebarIcon(item.title)
@@ -119,12 +120,14 @@ export function AppSidebar() {
                   <item.icon color="white" className="w-6 aspect-square" />
                 )}
                 {/* <item.icon color="white" className="w-6 aspect-square" /> */}
-                <span>{item.title}</span>
+                <span className="text-white">{item.title}</span>
               </a>
               // </SidebarMenuButton>
               // </SidebarMenuItem>
             ))}
           </ScrollArea>
+          {/* </div> */}
+          {/* <div className="flex-1"></div> */}
           <div>
             <div className="p-1.5 bg-slate-700 flex gap-3 rounded-md">
               <Wallet
@@ -132,8 +135,8 @@ export function AppSidebar() {
                 className="w-8 h-8 p-1 bg-slate-600 rounded-sm"
               />
               <span className="flex flex-col">
-                <small>Available credits</small>
-                <span className="text-lg">222.10</span>
+                <small className="text-white">Available credits</small>
+                <span className="text-lg text-white">222.10</span>
               </span>
             </div>
           </div>
