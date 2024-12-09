@@ -31,10 +31,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SidebarProvider
-          style={{
-            "--sidebar-width": "20rem",
-            "--sidebar-width-mobile": "20rem",
-          }}
+        // style={{
+        //   "--sidebar-width": "20rem",
+        //   "--sidebar-width-mobile": "20rem",
+        // }}
         >
           <AppSidebar />
           <main className="w-full">{children}</main>

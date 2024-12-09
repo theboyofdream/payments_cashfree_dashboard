@@ -95,9 +95,11 @@ export function DataTable<TData, TValue>({
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  table.previousPage();
+                  if (table.getCanPreviousPage()) {
+                    table.previousPage();
+                  }
                 }}
-                disabled={!table.getCanPreviousPage()}
+                // disabled={!table.getCanPreviousPage()}
               />
             </PaginationItem>
             <RenderPaginationBtn
@@ -137,7 +139,7 @@ export function DataTable<TData, TValue>({
                     table.nextPage();
                   }
                 }}
-                disabled={!table.getCanNextPage()}
+                // disabled={!table.getCanNextPage()}
                 // disabled={
                 //   table.getState().pagination.pageIndex === table.getPageCount()
                 // }
@@ -155,10 +157,9 @@ type RenderPaginationBtnProps = {
   activePageIndex: number;
   onPageClick: (page: number) => void;
 };
-function RenderPaginationBtn({
-  totalPages,
-  activePageIndex,
-  onPageClick,
-}: RenderPaginationBtnProps) {
+function RenderPaginationBtn({}: // totalPages,
+// activePageIndex,
+// onPageClick,
+RenderPaginationBtnProps) {
   return <></>;
 }

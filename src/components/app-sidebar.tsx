@@ -104,7 +104,7 @@ export function AppSidebar() {
             </div>
             <ChevronDown color="white" className="w-8 h-8" />
           </div>
-          <ScrollArea className="flex-1">
+          <ScrollArea className="flex-1 mr-3">
             {items.map((item) => (
               // <SidebarMenuItem key={item.title}>
               // <SidebarMenuButton asChild>
